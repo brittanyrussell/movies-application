@@ -5,7 +5,7 @@ function writeMovies(movies) {
         card += "<div class='card-header'>" + movies[i].title + "</div>";
         card += "<div class='card-body'>";
         card += "<p class='card image'><!--MOVIE POSTER IMAGES--></p>";
-        card += "<p class='card-text'>\" + movies[i].rating + \"</p>";
+        card += "<p class='card-text'>" + movies[i].rating + "</p>";
         // WRITE RATINGS AS IMAGES WRITTEN BY CODE IN CORRESPONDING NUMBER
         card += "<p class='card-footer'>";
         // for (var j = 0; j < movies[i].tags.length; j++) {
@@ -21,8 +21,15 @@ function writeMovies(movies) {
 
 $(document).ready(function(){
     $("#loadingHeader").text("Loading...");
-    let movies = $.ajax("../db.json");
-    movies.done(writeMovies)
-    }
+    const {getMovies} = require('./api.js');
+
+    getMovies().then((movies) => {
+
+        writeMovies(movies);
+    }).catch((error) => {
+        alert('Oh no! Something went wrong.\nCheck the console for details.')
+        console.log(error);
+    });
+
 });
 
