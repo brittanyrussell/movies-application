@@ -4,13 +4,11 @@
       "title": "Casablanca",
       "rating": "4",
       "id": 1
-//      "image":images/Casablanca.jpg
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "5",
       "id": 2
-//      "image": url("images/StarWars poster.jpg")
     }
   ]
 }

@@ -1,7 +1,6 @@
 function writeMovies(movies) {
-
-    for (var i = 0; i < movies.length; i++) {
-        var card = "<div class='card'>";
+    for (let i = 0; i < movies.length; i++) {
+        let card = "<div class='card'>";
         card += "<div class='card-header'>" + movies[i].title + "</div>";
         card += "<div class='card-body'>";
         card += "<p class='card image'>"  + movies [i].image + "</p>";
@@ -18,10 +17,11 @@ function writeMovies(movies) {
     }
 
 }
+
+
 function userInput() {
 
-
-    var card = "<div class='card'>";
+    let card = "<div class='card'>";
     card += "<div class='card-header' id='title'>" + "<input type='text'>" +  "</div>";
     card += "<div class='card-body'>";
     card += "<p class='card image' id='image'>" + "<input type='text'>" +   "</p>";
@@ -43,8 +43,10 @@ function userInput() {
     //     card += cats;
     // }
     card += "</div>";
-    $("#moviesLayout").append(card);
+    $("#input").append(card);
+
 }
+ // userInput()
 // $.ajax  ( [{
 //     type: "POST",
 //     url: "/db.json",
@@ -61,15 +63,17 @@ $(document).ready(function(){
     const {getMovies} = require('./api.js');
 
     getMovies().then((movies) => {
-
+        console.log(movies);
         writeMovies(movies);
-        userInput();
+        // userInput()
+
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.')
         console.log(error);
     });
-
 });
+
+
 
 
 
