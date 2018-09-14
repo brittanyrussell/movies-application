@@ -47,20 +47,6 @@ $("#submit").click(function () {
     $("#moviesLayout").append(table);
 });
 
-// $("#delete").click(function(){
-//     console.log($(this));
-// });
-// $("#moviesLayout").delegate('.delete', 'click', function() {
-//     let $td = $(this).closest('td');
-//
-//     $.ajax({
-//         type: 'DELETE',
-//         url: './api/movies/' + $(this).data("td"),
-//         success: function () {
-//             $td.remove();
-//         }
-//     })
-// });
 
 
 
