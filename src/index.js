@@ -1,31 +1,13 @@
 // =================START OF CARD GENERATION FUNCTION==============
-// function writeMovies(movies) {
-//     for (let i = 0; i < movies.length; i++) {
-//         let card = "<div class='card bg-dark'>";
-//         card += "<div class='card-body'>" + "<p>" +movies[i].title+"</p>";
-//         // card += "<p class='card image'>" + movies [i].image + "</p>";
-//         card += "<p class='card-text'>" + movies[i].rating + "</p>";
-//         // WRITE RATINGS AS IMAGES WRITTEN BY CODE IN CORRESPONDING NUMBER
-//         card += "<p class='card-footer'>";
-//         // for (var j = 0; j < movies[i].tags.length; j++) {
-//         //     var cats = "";
-//         //     cats = "<button type='button' class='btn btn-info'>" + movies[i].tags[j] + "</button>";
-//         //     card += cats;
-//         // }
-//         card += "</div>";
-//         $("#moviesLayout").append(card);
-//     }
-// }
 function writeMovies(movies) {
     for (let i = 0; i < movies.length; i++) {
         let table = "<tr>";
         table += "<td>" + movies[i].title + "</td>";
-        table += "<td>" + movies[i].rating + "</td>";
+        table += "<td>" + movies[i].rating + '<button class="delete" style="float: right">X</button>' + "</td>";
         table+= "</tr>";
         $("#moviesLayout").append(table);
     }
 }
-
 // =================END OF CARD GENERATION FUNCTIONS==============
 
 // ====================DOCUMENT LOAD FUNCTIONS====================
@@ -60,10 +42,27 @@ $("#submit").click(function () {
     });
     let table = "<tr>";
     table += "<td>" + $('#title').val() + "</td>";
-    table += "<td>" + $('#rating').val() + "</td>";
+    table += "<td>" + $('#rating').val() + '<button class="delete">X</button>' + "</td>";
     table+= "</tr>";
     $("#moviesLayout").append(table);
 });
+
+// $("#delete").click(function(){
+//     console.log($(this));
+// });
+// $("#moviesLayout").delegate('.delete', 'click', function() {
+//     let $td = $(this).closest('td');
+//
+//     $.ajax({
+//         type: 'DELETE',
+//         url: './api/movies/' + $(this).data("td"),
+//         success: function () {
+//             $td.remove();
+//         }
+//     })
+// });
+
+
 
 
 
