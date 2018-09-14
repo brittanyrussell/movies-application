@@ -1,12 +1,47 @@
 html, body {
     height: 100%;
+    background-color: grey;
 }
-
+.card-body{
+    color: white;
+    width: 50%;
+    height: 6em;
+}
+.title{
+    height: 4em;
+}
+h3{
+    color: white;
+    text-align: center;
+}
+table{
+    color: white;
+}
+#moviesLayout{
+    position: fixed;
+    top: 5em;
+    left: 30%;
+}
+td{
+    width: 20em;
+    height: 1em;
+    border-bottom: 1px solid black;
+}
+#inputFields{
+    color: white;
+    text-align: center;
+}
+#input{
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+}
 .container {
     position: relative;
     top: 50%;
     transform: translateY(-100%);
     text-align: center;
+    clear: both;
 }
 
 .lds-ripple {
