@@ -58,18 +58,10 @@ $("#submit").click(function () {
             rating: $("#rating").val(),
         }
     });
-    let table = "<table>";
-    table += "<tr><td>" + $("#title").val() + "</td><td></td>";
-    // card += "<p class='card image'>" + movies [i].image + "</p>";
-    table += "<td>" + $("#rating").val() + "</td></tr>";
-    // WRITE RATINGS AS IMAGES WRITTEN BY CODE IN CORRESPONDING NUMBER
-    table += "<p class='card-footer'>";
-    // for (var j = 0; j < movies[i].tags.length; j++) {
-    //     var cats = "";
-    //     cats = "<button type='button' class='btn btn-info'>" + movies[i].tags[j] + "</button>";
-    //     card += cats;
-    // }
-    table += "</table>";
+    let table = "<tr>";
+    table += "<td>" + $('#title').val() + "</td>";
+    table += "<td>" + $('#rating').val() + "</td>";
+    table+= "</tr>";
     $("#moviesLayout").append(table);
 });
 
